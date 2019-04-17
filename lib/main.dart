@@ -9,14 +9,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter hello word',
-      home: new Scaffold(
-//          appBar: new AppBar(
-//            title: new Text("我的flutter"),
-//          ),
-          body: new Center(
-//            child: new Text("Helle world"),
-        child: new RandomWord(),
-      )),
+      theme: new ThemeData(primaryColor: Colors.white),
+//      home: new Scaffold(
+////          appBar: new AppBar(
+////            title: new Text("我的flutter"),
+////          ),
+//          body: new Center(
+////            child: new Text("Helle world"),
+//        child: new RandomWord(),
+//      )),
+      home: new RandomWord(),
     );
   }
 }
