@@ -1,5 +1,6 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/testText.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter hello word',
-      theme: new ThemeData(primaryColor: Colors.white),
+      theme: new ThemeData(primaryColor: Colors.deepPurple),
 //      home: new Scaffold(
 ////          appBar: new AppBar(
 ////            title: new Text("我的flutter"),
@@ -59,6 +60,8 @@ class RandomWordState extends State<StatefulWidget> {
         title: new Text("我的flutter"),
         actions: <Widget>[
           new IconButton(icon: new Icon(Icons.list), onPressed: _pushSave),
+          new IconButton(
+              icon: new Icon(Icons.android), onPressed: _pushTestTextPage),
         ],
       ),
       body: _buildSuggestions(),
@@ -105,5 +108,10 @@ class RandomWordState extends State<StatefulWidget> {
         body: new ListView(children: divided),
       );
     }));
+  }
+
+  void _pushTestTextPage() {
+    Navigator.push(
+        context, new MaterialPageRoute(builder: (_) => new TestTextPage()));
   }
 }
